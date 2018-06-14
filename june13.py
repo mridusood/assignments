@@ -29,25 +29,37 @@
   #  print(a)
 #add(a)
 
-def add (a,b):
-    return a+b
-def subtract(a,b):
-    sub=a-b
-    return sub
-ch=int(input("enter choice"))
-c=int(input("enter a"))
-d=int(input("enter b"))
-if ch==1:
-    print(add(a,b))
+#def add (a,b):
+ #   return a+b
+#def subtract(a,b):
+ #   sub=a-b
+  #  return sub
+#ch=int(input("enter choice"))
+#c=int(input("enter a"))
+#d=int(input("enter b"))
+#if ch==1:
+   # print(add(a,b))
 
-if ch==2:
-    print(subtract(a,b))
+#if ch==2:
+ #   print(subtract(a,b))
 
 
-def factorial(x):
-    if x==1:
-        return 1
-    else:
-        return(x*factorial(x-1))
-x=int(input("enter limit"))
-print(factorial(x))
+#def factorial(x):
+ #   if x==1:
+   #     return 1
+  #  else:
+ #       return(x*factorial(x-1))
+#x=int(input("enter limit"))
+#print(factorial(x))
+
+l=int(input("ENTER THE LIMIT"))
+def table(l,):
+     if l==1:
+         ans=12*1
+         return print(ans)
+     else:
+         table(l-1)
+         ans= (12*l)
+         print("TABLE VALUES-->")
+         return print(ans)
+print(table(l))

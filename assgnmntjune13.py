@@ -23,7 +23,7 @@ print("The perfect no. are:")
 perfect()
 
 #ques3
-def times_tables(n=12, t=0):
+def times_tables(n=12, t=1):
     if t == 11:
         return
     print(str(n) + " x " + str(t) + " = " + str(n*t))
