@@ -21,8 +21,8 @@ print(d.month)
 
 import calendar
 my_date = date.today()
-z=calendar.day_name[my_date.weekday()]
-print(z)
+print(calendar.day_name[my_date.weekday()])
+
 
 #ques5
 b='11/01/2021'
