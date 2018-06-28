@@ -1,69 +1,49 @@
-my_dict = {'name':'MRIDU', 'phno':"456618910 "}
-
-
+import tkinter
 from tkinter import *
 from tkinter.filedialog import askopenfile
 from tkinter import messagebox
+d={'richa':'55198620',
+   'mridu':'1234567890',
+   'navi':'0987654321'}
+
 
 def cmd():
-    root = Tk()
-    root.title("*NEW DETAILS*")
-    root.geometry("450x165")
-    name_label = Label(root, text="NAME")
-    name_label.pack()
+    x=b1.get()
+    y=b2.get()
+    mylist.insert(END, "name " + str(x))
+    mylist.insert(END, "phone " + str(y))
+    b1.delete(0,END)
+    b2.delete(0,END)
 
-    name_text_box =(Entry(root, bd=1))
-    name_text_box.pack()
+#Ques1
 
-    ph_label = Label(root, text="PHONE NUMBER")
-    ph_label.pack()
-
-    ph_text_box =(Entry(root, bd=1))
-    ph_text_box.pack()
-
-    def add_new():
-        name=name_text_box.get()
-        print(name)
-        phn=ph_text_box.get()
-        print(phn)
-        my_dict = {'name': name, 'phno':phn}
-        label1 = Label(root, text="Information entered successfully")
-        label1.pack()
-
-    enter_button = Button(root, text="Enter", command=add_new)
-    enter_button.pack()
-    root.mainloop()
-print("\n")
-print(my_dict['name'])
-print(my_dict.get('phno'))
-
-
-
-
-
-master = Tk()
-master.title("GUI Asignment 2")
-master.geometry("600x500")
-scrollbar = Scrollbar(master)
-scrollbar.pack( side = RIGHT, fill = Y )
-
-mylist = Listbox(master, yscrollcommand = scrollbar.set)
-mylist.insert(END, "NAME- "+ my_dict['name'])
-mylist.insert(END, "PHONENO- " + str(my_dict['phno']))
-
-mylist.pack( side = LEFT, fill = BOTH )
-scrollbar.config( command = mylist.yview )
-
-lb=Label(master,text="GUI2")
-lb.pack()
-
-
-import tkinter as tk
-frame = tk.Frame(master)
+master=Tk()
+frame=Frame(master)
 frame.pack()
-slogan = tk.Button(frame,text="Enter New Details",bg='red',fg='white',command=cmd)
-slogan.pack(side=tk.LEFT)
+master.title("scroll bar")
+master.geometry('300x200')
+s=Scrollbar(master)
+s.pack(side=RIGHT,fill=Y)
+mylist=Listbox(master,yscrollcommand=s.set)
+for i in d:
+    mylist.insert(END,"name "+ str(i))
+    mylist.insert(END,"phone "+str(d[i]))
+mylist.pack(side=LEFT,fill=BOTH)
+s.config(command=mylist.yview)
 
-button = tk.Button(frame,text="QUIT",bg="red",fg='white',command=quit)
-button.pack(side=tk.LEFT)
+
+#Ques2
+
+name=Label(master,text='NAME')
+name.pack()
+b1=Entry(master)
+b1.pack()
+phone=Label(master,text='PHONE NUMBER')
+phone.pack()
+b2=Entry(master)
+b2.pack()
+x=Button(frame,text='INSERT',command=cmd,bg='red',fg='white')
+x.pack()
+y= Button(frame,text="QUIT",fg='white',bg='red',command=quit)
+y.pack(side=LEFT)
 mainloop()
