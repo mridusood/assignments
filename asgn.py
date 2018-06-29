@@ -1,20 +1,28 @@
-import tkinter
-from tkinter import *
-from tkinter.filedialog import askopenfile
-from tkinter import messagebox
+import numpy as np
+import math
 
-d={'a':'8872296040',
-   'b':'1234567890',
-   'c':'0987654321'}
-master=Tk()
-master.title("scroll bar")
-master.geometry('50x50')
-s=Scrollbar(master)
-s.pack(side=RIGHT,fill=Y)
-mylist=Listbox(master,yscrollcommand=s.set)
-for i in d:
-    mylist.insert(END,"name "+ str(i))
-    mylist.insert(END,"phone "+str(d[i]))
-mylist.pack( side = LEFT, fill = BOTH )
-s.config( command = mylist.yview )
-mainloop()
+#Ques1
+x=np.random.random((10,1))
+print (x)
+m=x.mean()
+print("mean is "+str(m))
+
+#Ques2
+y=np.random.random((20,1))
+print(y)
+a=y.var()
+print("variance is "+str(a))
+b=y.std()
+print("standard deviaation is "+str(b))
+
+#Ques3
+s=np.random.random((10,20))
+t=np.random.random((20,25))
+#a.dtype=np.float64
+#b.dtype=np.float64
+#print(a*b)
+c=s@t
+print(c)
+d=np.sum(c)
+print("sum of all elements of new matrix is "+str(d))
+#ques4
