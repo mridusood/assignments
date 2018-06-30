@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 #Q1
 
-data={'name':['mridu'],'age':[20],'mail id':['richasood120@gmail.com@gmail.com'],'phone no.':[879722410]}
+data={'name':['richa'],'age':[20],'mail id':['richasood120@gmail.com'],'phone no.':[558192044]}
 df=pd.DataFrame(data)
 print(df)
 print("\n \n after adding information of my friend ")
